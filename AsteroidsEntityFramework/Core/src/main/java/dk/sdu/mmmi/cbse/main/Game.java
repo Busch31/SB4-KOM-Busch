@@ -2,6 +2,7 @@ package dk.sdu.mmmi.cbse.main;
 
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
@@ -89,7 +90,7 @@ public class Game
     private void draw() {
         for (Entity entity : world.getEntities()) {
 
-            sr.setColor(1, 1, 1, 1);
+            sr.setColor(entity.getColor());
 
             sr.begin(ShapeRenderer.ShapeType.Line);
 
