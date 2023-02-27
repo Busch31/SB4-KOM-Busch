@@ -1,4 +1,4 @@
-package dk.sdu.mmmi.cbse.enemysystem;
+package dk.sdu.mmmi.cbse.asteroidsystem;
 
 import dk.sdu.mmmi.cbse.common.data.Entity;
 import dk.sdu.mmmi.cbse.common.data.GameData;
@@ -7,31 +7,19 @@ import dk.sdu.mmmi.cbse.common.data.entityparts.MovingPart;
 import dk.sdu.mmmi.cbse.common.data.entityparts.PositionPart;
 import dk.sdu.mmmi.cbse.common.services.IEntityProcessingService;
 
-import java.util.Random;
-
-/**
- *
- * @author jcs
- */
-
 
 public class AsteroidControlSystem implements IEntityProcessingService {
-
-    private static final double Min_Movement_Probability = 0.4f;
-    private static final double Max_Movement_Probability = 0.8f;
-    private Random random = new Random();
+    String instantiationID;
 
     @Override
     public void process(GameData gameData, World world) {
-
         for (Entity asteroid : world.getEntities(Asteroid.class)) {
             PositionPart positionPart = asteroid.getPart(PositionPart.class);
             MovingPart movingPart = asteroid.getPart(MovingPart.class);
 
-            movingPart.setLeft(gameData.getKeys().isDown(LEFT));
-            movingPart.setRight(gameData.getKeys().isDown(RIGHT));
-            movingPart.setUp(gameData.getKeys().isDown(UP));
+            this.instantiationID = asteroid.getID();
 
+            movingPart.setUp(true);
 
             movingPart.process(gameData, asteroid);
             positionPart.process(gameData, asteroid);
@@ -40,7 +28,7 @@ public class AsteroidControlSystem implements IEntityProcessingService {
         }
     }
 
-    private void updateShape(Entity entity) {
+    private void updateShape (Entity entity) {
         float[] shapex = entity.getShapeX();
         float[] shapey = entity.getShapeY();
         PositionPart positionPart = entity.getPart(PositionPart.class);
@@ -63,5 +51,4 @@ public class AsteroidControlSystem implements IEntityProcessingService {
         entity.setShapeX(shapex);
         entity.setShapeY(shapey);
     }
-
 }

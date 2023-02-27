@@ -9,6 +9,7 @@ import dk.sdu.mmmi.cbse.common.services.IGamePluginService;
 
 public class PlayerPlugin implements IGamePluginService {
 
+
     private Entity player;
 
     public PlayerPlugin() {
