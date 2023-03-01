@@ -8,7 +8,7 @@ import dk.sdu.mmmi.cbse.common.data.entityparts.PositionPart;
 import dk.sdu.mmmi.cbse.common.services.IPostEntityProcessingService;
 
 public class CollisionController implements IPostEntityProcessingService {
-
+    // Test comment
     @Override
     public void process(GameData gameData, World world) {
         // two for loops for all entities in the world
