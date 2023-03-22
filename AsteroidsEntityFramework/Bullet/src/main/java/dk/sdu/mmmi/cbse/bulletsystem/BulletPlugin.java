@@ -39,7 +39,7 @@ public class BulletPlugin implements IGamePluginService {
         for (Entity player : world.getEntities(Player.class)) {
             PositionPart playerPosistionPart = player.getPart(PositionPart.class);
             bullet.add(new PositionPart(playerPosistionPart.getX(), playerPosistionPart.getY(), playerPosistionPart.getRadians()));
-            bullet.add((new LifePart(1,100)));
+            bullet.add((new LifePart(1,1)));
         }
 
 

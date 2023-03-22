@@ -6,6 +6,7 @@ import dk.sdu.mmmi.cbse.common.data.World;
 import dk.sdu.mmmi.cbse.common.data.entityparts.LifePart;
 import dk.sdu.mmmi.cbse.common.data.entityparts.PositionPart;
 import dk.sdu.mmmi.cbse.common.services.IPostEntityProcessingService;
+import dk.sdu.mmmi.cbse.common.data.entityparts.SplitterPart;
 
 public class CollisionController implements IPostEntityProcessingService {
     // Test comment
@@ -37,6 +38,9 @@ public class CollisionController implements IPostEntityProcessingService {
                     // if entity has been hit, and should have its life reduced
                     if (entityLife.getLife() > 0) {
                         entityLife.setLife(entityLife.getLife() - 1);
+
+                        // if entity asteroid ; then setShouldsplit
+
                         // if entity is out of life - remove
                         if (entityLife.getLife() <= 0) {
                             world.removeEntity(entity);
