@@ -1,7 +1,5 @@
 package dk.sdu.mmmi.cbse.common.data;
 
-import dk.sdu.mmmi.cbse.common.data.entityparts.WeaponPart;
-
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -28,7 +26,7 @@ public class World {
     public void removeEntity(Entity entity) {
         entityMap.remove(entity.getID());
     }
-    
+
     public Collection<Entity> getEntities() {
         return entityMap.values();
     }
@@ -49,7 +47,4 @@ public class World {
         return entityMap.get(ID);
     }
 
-    public Entity[] getEntities(Class<WeaponPart> weaponPartClass) {
-        return new Entity[0];
-    }
 }

@@ -1,29 +1,15 @@
 package dk.sdu.mmmi.cbse.common.data;
 
 import dk.sdu.mmmi.cbse.common.data.entityparts.EntityPart;
-
-import java.awt.*;
 import java.io.Serializable;
 import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 
-import com.badlogic.gdx.graphics.Color;
-import dk.sdu.mmmi.cbse.common.data.entityparts.PositionPart;
-
 public class Entity implements Serializable {
+
     private final UUID ID = UUID.randomUUID();
 
-
-    public Color getColor() {
-        return color;
-    }
-
-    public void setColor(Color color) {
-        this.color = color;
-    }
-
-    private Color color = Color.LIME;
     private float[] shapeX = new float[4];
     private float[] shapeY = new float[4];
     private float radius;
@@ -36,7 +22,6 @@ public class Entity implements Serializable {
     public void add(EntityPart part) {
         parts.put(part.getClass(), part);
     }
-
 
     public void remove(Class partClass) {
         parts.remove(partClass);
@@ -74,7 +59,4 @@ public class Entity implements Serializable {
         this.shapeY = shapeY;
     }
 
-    public PositionPart getPositionPart() {
-        return this.getPart(PositionPart.class);
-    }
 }
