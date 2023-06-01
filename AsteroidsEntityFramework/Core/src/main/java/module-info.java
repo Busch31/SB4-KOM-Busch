@@ -3,7 +3,6 @@ module Core {
     requires CommonEnemy;
     requires CommonBullet;
     requires CommonAsteroids;
-    requires java.desktop;
     requires com.badlogic.gdx;   
     uses dk.sdu.mmmi.cbse.common.services.IGamePluginService;
     uses dk.sdu.mmmi.cbse.common.services.IEntityProcessingService;
